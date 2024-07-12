@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 import "../styles/Header.css";
 
-export default function Header({ score }) {
-  let highScore = 0;
+let displayHighScore = 0;
 
-  if (score > highScore) highScore = score;
-
+export default function Header({ score, highScore = 0 }) {
   return (
     <div className="nav">
       <h1 className="heading">Pokemon Memory Cards</h1>
@@ -17,7 +15,12 @@ export default function Header({ score }) {
 
       <div className="score-keeper">
         <p>Score: {score}</p>
-        <p>High Score: {highScore}</p>
+        <p>
+          High Score:{" "}
+          {displayHighScore > highScore
+            ? displayHighScore
+            : (displayHighScore = highScore) && displayHighScore}
+        </p>
       </div>
     </div>
   );

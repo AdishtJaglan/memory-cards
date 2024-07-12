@@ -1,16 +1,19 @@
 import "./App.css";
-import PokemonCard from "./components/PokemonCard";
+import { useState } from "react";
 import Header from "./components/Header";
-import createArray from "./createArray";
+import Gameboard from "./components/Gameboard";
 
 function App() {
-  const ids = createArray();
+  const [score, setScore] = useState(0);
+
+  const handleScore = () => {
+    setScore(score + 1);
+  };
+
   return (
     <>
-      <Header />
-      {ids.map((id) => (
-        <PokemonCard id={id} key={id} />
-      ))}
+      <Header score={score} />
+      <Gameboard handleScore={handleScore} />
     </>
   );
 }

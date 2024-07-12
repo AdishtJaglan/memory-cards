@@ -1,7 +1,7 @@
 const createArray = () => {
   const arr = [];
   while (arr.length < 8) {
-    const randomNum = Math.floor(Math.random() * 150) + 1;
+    const randomNum = Math.floor(Math.random() * 30) + 1;
     if (!arr.includes(randomNum)) {
       arr.push(randomNum);
     }

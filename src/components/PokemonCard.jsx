@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/PokemonCard.css";
 import { useEffect, useState } from "react";
 
-export default function PokemonCard({ id, handleScore }) {
+export default function PokemonCard({ id, onClick, isClicked }) {
   const [name, setName] = useState("");
   const [imgUrl, setImgUrl] = useState("");
 
@@ -25,7 +25,7 @@ export default function PokemonCard({ id, handleScore }) {
   }, [id]);
 
   return (
-    <div className="poke-card" onClick={() => handleScore()}>
+    <div className="poke-card" onClick={!isClicked ? onClick : null}>
       <div className="poke-image">
         <img src={imgUrl} />
       </div>

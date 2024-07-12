@@ -1,0 +1,24 @@
+.nav {
+  grid-row: 1/2;
+  grid-column: 1/5;
+}
+
+.heading {
+  margin-bottom: 0;
+  margin-top: 24px;
+}
+
+.score-keeper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.score-keeper {
+  margin: 0;
+}
+
+p {
+  margin: 0.8rem;
+}
